@@ -1,0 +1,58 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div id="features" class="carousel" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#features" data-bs-slide-to="0" class="active indicator-button" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#features" data-bs-slide-to="1" class="indicator-button" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#features" data-bs-slide-to="2" class="indicator-button" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="https://placehold.co/1200x600/000000/FFFFFF/png" class="d-block mx-auto" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>D&D Player Character Tracker</h5>
+            <p>Tu solución para dejar de perder las hojas de personaje.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://placehold.co/1200x600/000000/FFFFFF/png" class="d-block mx-auto" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>¡Crea tus hojas de personaje de una manera fácil!</h5>
+            <p>Nosotros te ayudamos con lo que necesites.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://placehold.co/1200x600/000000/FFFFFF/png" class="d-block mx-auto" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>¡Registra las notas de la sesión!</h5>
+            <p>Y llena de orgullo a tu DM (?).</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev custom-control" type="button" data-bs-target="#features" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next custom-control" type="button" data-bs-target="#features" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próxima</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+
+<!-- container -->
+<!-- includes base/carousel.html -->
+<!-- container -->
+<!-- if user is not authenticated -->
+<!-- button de login -->
+<!-- cinco botones: crear nuevo pj | añadir notas | revisar transfondo | revisar stats | revisar hechizos |  -->
+
+

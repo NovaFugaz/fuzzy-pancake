@@ -1,0 +1,37 @@
+{% load static %}
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container">
+        <a href="/">
+            <img src="{% static 'base/img/logo.png' %}" alt="Logo" width="60" height="32" class="d-inline-block align-text-top">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-4 mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Nuevo</a></li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="characterDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Personajes</a>
+                    <ul class="dropdown-menu" aria-labelledby="characterDropdown">
+                    <li><a class="dropdown-item" href="{% url 'creator' %}">Crear nuevo</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                            {% for character in characters %}
+                            <li><a class="dropdown-item" href="#">{{ character.name }}</a></li>
+                            {% empty %}
+                            <li><span class="dropdown-item text-muted">(Ninguno)</span></li>
+                            {% endfor %}
+                    </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Estadísticas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Hechizos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Transfondo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'notas' %}">Notas</a></li>
+                    </ul>
+                    <div class="ms-auto">
+                    <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">{{ 'Bienvenido, ' }}{{ user.username }}{{'. Cerrar sesión ' }}</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Bienvenido, Inicia sesión aquí</a></li>
+                    {% endif %}
+                    </div>
+            </div>
+    </div>
+</nav>

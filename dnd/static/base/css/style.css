@@ -1,0 +1,24 @@
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    margin-bottom: 60px; /* Altura del footer */
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+.indicator-button {
+    background-color: #fff;
+    border-color: #fff;
+  }
+
+.logo-link {
+    height: auto;
+    max-height: 32px; /* Adjust the value as needed */
+  }

@@ -1,0 +1,64 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load custom_tags %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <form method="post" class="form">
+            {% csrf_token %}
+            
+            {% for field in form %}
+            <div class="form-group col-md-6">
+                <div class="row">
+                    <label class="col-4">{{ field.label_tag }}</label>
+                    <div class="col-6 mb-2 mt-2">
+                        {{ field|add_class:'form-control' }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+            <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+<!-- to-do para una próxima vez  -->
+<!-- react-ish app to create a character. it should allow you to first select level, race
+
+page 0
+
+nombre 
+exp / lv
+
+page 1
+
+menu desplegable: raza // subraza
+
+page 2
+
+clase // subclase (dejar avisado que a nivel 3 se pueden revisar las subclases if
+
+page 3
+
+leer la class y elegir trasfondo (en alguna upd añadir dotes ig (as modifies values/mods))
+
+bg con 
+
+page 4
+
+equipo choose con desc de c/item
+
+page 5
+
+armas
+
+page 6
+
+spells / cantrip
+(if not needed, press next)
+
+
+-->
