@@ -15,7 +15,7 @@
                             {% for character in characters %}
                             <li><a class="dropdown-item" href="#">{{ character.name }}</a></li>
                             {% empty %}
-                            <li><span class="dropdown-item text-muted">(Ninguno)</span></li>
+                            <li><a class="dropdown-item" href="{% url 'charlist' %}">Lista de personajes</a></li>
                             {% endfor %}
                     </ul>
                     </li>
