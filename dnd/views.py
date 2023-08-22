@@ -11,6 +11,7 @@ from .models import UserProfile
 from .forms import RegistrationForm
 from .forms import CharacterForm
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 
 def notas(request):
@@ -64,6 +65,15 @@ def creator(request):
             character = form.save(commit=False)
             character.user_profile = user_profile  # Set the user_profile
             character.save()
-            return redirect('character_list')
+            return redirect('charlist')
     context = {'form': form}
     return render(request, 'creator.html', context)
+
+def characterList(request):
+    return render(request, 'characters/charlist.html')
+
+def error(request):
+    return HttpResponse("Warning!")
+
+def success(request):
+    return HttpResponse("YES!")
